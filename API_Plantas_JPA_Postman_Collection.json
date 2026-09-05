@@ -1,0 +1,157 @@
+{
+  "info": {
+    "_postman_id": "api-plantas-jpa-crud",
+    "name": "API Plantas JPA - CRUD",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Crear planta",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/plantas",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "plantas"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Lavanda\",\n  \"tipo\": \"aromática\",\n  \"ubicacion\": \"balcón\",\n  \"necesitaSolDirecto\": true\n}"
+        }
+      }
+    },
+    {
+      "name": "2. Consultar todas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/plantas",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "plantas"
+          ]
+        }
+      }
+    },
+    {
+      "name": "3. Consultar por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/plantas/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "plantas",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "4. Actualizar planta",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/plantas/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "plantas",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Lavanda francesa\",\n  \"tipo\": \"aromática\",\n  \"ubicacion\": \"terraza\",\n  \"necesitaSolDirecto\": true\n}"
+        }
+      }
+    },
+    {
+      "name": "5. Buscar por tipo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/plantas/buscar?tipo=aromática",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "plantas",
+            "buscar?tipo=aromática"
+          ]
+        }
+      }
+    },
+    {
+      "name": "6. Buscar por nombre",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/plantas/buscar-nombre?nombre=lav",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "plantas",
+            "buscar-nombre?nombre=lav"
+          ]
+        }
+      }
+    },
+    {
+      "name": "7. Eliminar planta",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/plantas/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "plantas",
+            "1"
+          ]
+        }
+      }
+    }
+  ]
+}
