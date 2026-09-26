@@ -3,4 +3,5 @@ target/
 *.iml
 .vscode/
 .DS_Store
-data/
+.env
+application-local.properties
