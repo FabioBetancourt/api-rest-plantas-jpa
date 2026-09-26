@@ -1,0 +1,162 @@
+{
+  "info": {
+    "_postman_id": "api-plantas-unidad3",
+    "name": "API Plantas - Unidad 3",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Crear categoría",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/categorias",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Tropical\",\n  \"descripcion\": \"Plantas adaptadas a ambientes cálidos y húmedos\"\n}"
+        }
+      }
+    },
+    {
+      "name": "2. Consultar categorías",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/categorias"
+      }
+    },
+    {
+      "name": "3. Crear planta",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/plantas",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Monstera deliciosa\",\n  \"ubicacion\": \"Sala\",\n  \"necesitaSolDirecto\": false,\n  \"categoriaId\": 1\n}"
+        }
+      }
+    },
+    {
+      "name": "4. Consultar plantas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/plantas"
+      }
+    },
+    {
+      "name": "5. Consultar por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/plantas/1"
+      }
+    },
+    {
+      "name": "6. Buscar por categoría",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/plantas/buscar?categoria=Tropical"
+      }
+    },
+    {
+      "name": "7. Actualizar planta",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/api/plantas/1",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Monstera deliciosa\",\n  \"ubicacion\": \"Estudio\",\n  \"necesitaSolDirecto\": false,\n  \"categoriaId\": 1\n}"
+        }
+      }
+    },
+    {
+      "name": "8. Consultar clima",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/clima?lat=5.07&lon=-75.52"
+      }
+    },
+    {
+      "name": "9. Recomendación de riego",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/api/clima/plantas/1/recomendacion-riego?lat=5.07&lon=-75.52"
+      }
+    },
+    {
+      "name": "10. Actuator health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/actuator/health"
+      }
+    },
+    {
+      "name": "11. Actuator metrics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/actuator/metrics"
+      }
+    },
+    {
+      "name": "12. Métrica plantas creadas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/actuator/metrics/plantas.creadas"
+      }
+    },
+    {
+      "name": "13. Métrica clima",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/actuator/metrics/clima.consultas"
+      }
+    },
+    {
+      "name": "14. Prometheus",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/actuator/prometheus"
+      }
+    },
+    {
+      "name": "15. Eliminar planta",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "{{baseUrl}}/api/plantas/1"
+      }
+    }
+  ]
+}
